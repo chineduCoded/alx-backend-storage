@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-web cache and tracker
+Web Cache and Tracker
 """
+
 import requests
 import redis
 import functools
@@ -28,6 +29,7 @@ def count_url_access(method):
         store.set(cached_key, html)
         store.expire(cached_key, 10)
         return html
+
     return wrapper
 
 
